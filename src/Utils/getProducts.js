@@ -1,18 +1,13 @@
 import products from "../Mock/asyncmock.js";
-import {categories} from "../Mock/asyncmock"
+import { categories } from "../Mock/asyncmock";
 
-export const getProducts = () => {
-  return new Promise((resolve, reject) => {
-    const ok = true;
-    setTimeout(() => {
-      if (ok) {
-        resolve(products);
-      } else {
-        reject("error");
-      }
-    }, 2000);
-  });
-};
+export const getProducts = (categoryId) => {
+  return new Promise (resolve => {
+      setTimeout(() => {
+          resolve(categoryId ? products.filter(prod => prod.category === categoryId) : products)
+      }, 500)
+  })
+}
 
 export const getProductsById = (id) => {
   return new Promise((resolve, reject) => {
@@ -34,5 +29,3 @@ export const getCategories = () => {
     }, 500);
   });
 };
-
-

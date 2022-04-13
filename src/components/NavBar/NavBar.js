@@ -25,7 +25,7 @@ const NavBar = () => {
             to={`/category/${cat.id}`}
             className={({ isActive }) => (isActive ? "ActiveOption" : "Option")}
           >
-            {cat.descripcion}
+            {cat.description}
           </NavLink>
         ))}
       </div>
