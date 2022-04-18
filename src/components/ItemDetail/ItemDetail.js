@@ -1,6 +1,16 @@
 import './ItemDetail.css'
+import Count from '../ItemCount/ItemCount'
+import { useState } from 'react'
+import {Link} from 'react-router-dom'
 
 const ItemDetail = ({ id, nombre, img, category, descripcion, precio, stock }) => {
+
+    const [quantity, setQuantity] = useState(0)
+
+    const handleAdd = (count) => {
+        setQuantity(count)
+    }
+
     return (
         <article className="CardItem">
             <header className="Header">
@@ -23,6 +33,7 @@ const ItemDetail = ({ id, nombre, img, category, descripcion, precio, stock }) =
                 </p>
             </section>           
             <footer className='ItemFooter'>
+                {quantity > 0 ? <Link to='/cart'>Ir al carrito</Link> : <Count onConfirm={handleAdd} stock={stock}/>} 
             </footer>
         </article>
     )
