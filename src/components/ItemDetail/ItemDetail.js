@@ -1,42 +1,53 @@
-import './ItemDetail.css'
-import Count from '../ItemCount/ItemCount'
-import { useState } from 'react'
-import {Link} from 'react-router-dom'
+import "./ItemDetail.css";
+import Count from "../ItemCount/ItemCount";
+import { useContext } from "react";
+import { NavLink } from "react-router-dom";
+import CartContext from "../../Context/CartContext";
 
-const ItemDetail = ({ id, nombre, img, category, descripcion, precio, stock }) => {
+const ItemDetail = ({
+  id,
+  nombre,
+  img,
+  category,
+  description,
+  precio,
+  stock,
+}) => {
+  const { addItem, isInCart } = useContext(CartContext);
 
-    const [quantity, setQuantity] = useState(0)
+  const handleAdd = (count) => {
+    const productObj = {
+      id,
+      nombre,
+      precio,
+      quantity: count,
+    };
 
-    const handleAdd = (count) => {
-        setQuantity(count)
-    }
+    addItem(productObj);
+  };
 
-    return (
-        <article className="CardItem">
-            <header className="Header">
-                <h2 className="ItemHeader">
-                    {nombre}
-                </h2>
-            </header>
-            <picture>
-                <img src={img} alt={nombre} className="ItemImg"/>
-            </picture>
-            <section>
-                <p className="Info">
-                    Categoria: {category}
-                </p>
-                <p className="Info">
-                    Descripción: {descripcion}
-                </p>
-                <p className="Info">
-                    Precio: ${precio}
-                </p>
-            </section>           
-            <footer className='ItemFooter'>
-                {quantity > 0 ? <Link to='/cart'>Ir al carrito</Link> : <Count onConfirm={handleAdd} stock={stock}/>} 
-            </footer>
-        </article>
-    )
-}
+  return (
+    <article className="CardItem">
+      <header className="Header">
+        <h2 className="ItemHeader">{nombre}</h2>
+      </header>
+      <picture>
+        <img src={img} alt={nombre} className="ItemImg" />
+      </picture>
+      <section>
+        <p className="Info">Categoria: {category}</p>
+        <p className="Info">{description}</p>
+        <p className="Info">Precio: ${precio}</p>
+      </section>
+      <footer className="ItemFooter">
+        {isInCart(id) ? (
+          <NavLink to="/cart">Ir al carrito</NavLink>
+        ) : (
+          <Count onConfirm={handleAdd} stock={stock} />
+        )}
+      </footer>
+    </article>
+  );
+};
 
-export default ItemDetail
+export default ItemDetail;

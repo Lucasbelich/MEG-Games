@@ -2,7 +2,7 @@ import "./NavBar.css";
 import CartWidget from "../CartWidget/CartWidget";
 import { NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { getCategories } from "../../Utils/getProducts"
+import { getCategories } from "../../Utils/getProducts";
 
 const NavBar = () => {
   const [categories, setCategories] = useState([]);
