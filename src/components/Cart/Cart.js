@@ -1,12 +1,18 @@
 import { useContext } from "react";
 import CartContext from "../../Context/CartContext";
 import ItemCart from "../ItemCart/ItemCart";
+import { NavLink } from "react-router-dom";
 
 const Cart = () => {
   const { cart } = useContext(CartContext);
 
   if (cart.length === 0) {
-    return <h1>No hay productos</h1>;
+    return (
+      <div>
+        <h1>No hay productos</h1>
+        <NavLink className={"buttonCount"} to="/">Volver al inicio</NavLink>
+      </div>
+    );
   }
 
   return (
