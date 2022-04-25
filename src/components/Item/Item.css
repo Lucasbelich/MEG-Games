@@ -7,6 +7,9 @@
     border: 1px solid #e4ebf5;
     border-radius: 10px;
 }
+.Li{
+    list-style: none;
+}
 
 .Header {
     display: flex;
@@ -59,4 +62,5 @@
 .ItemFooter {
     display: flex;
     justify-content: center;
-}
+} 
+

@@ -4,9 +4,11 @@ import { NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getCategories } from "../../Utils/getProducts";
 
-const NavBar = () => {
-  const [categories, setCategories] = useState([]);
 
+const NavBar = () => {
+
+  const [categories, setCategories] = useState([]);
+  
   useEffect(() => {
     getCategories().then((categories) => {
       setCategories(categories);

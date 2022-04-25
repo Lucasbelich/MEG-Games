@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { getProductsById } from "../../Utils/getProducts";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
+import "./ItemDetailContainer.css"
+import '../ItemList/ItemList.css'
 
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState();
@@ -29,9 +31,9 @@ const ItemDetailContainer = () => {
   return (
     <div className="ItemDetailContainer">
       {loading ? (
-        <h1>Cargando...</h1>
+        <div class="spinner"></div>
       ) : product ? (
-        <ItemDetail {...product} />
+        <ItemDetail className="ListGroup" {...product} />
       ) : (
         <h1>El producto no existe</h1>
       )}

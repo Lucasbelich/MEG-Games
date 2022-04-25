@@ -23,7 +23,7 @@ const Count = ({ initial = 0, stock, onConfirm }) => {
           +
         </button>
       </div>
-      <button onClick={() => onConfirm(count)}>Agregar al carrito</button>
+      <button className="Button" onClick={() => onConfirm(count)}>Agregar al carrito</button>
     </div>
   );
 };

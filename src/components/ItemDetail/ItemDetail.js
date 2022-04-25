@@ -27,26 +27,28 @@ const ItemDetail = ({
   };
 
   return (
-    <article className="CardItem">
-      <header className="Header">
-        <h2 className="ItemHeader">{nombre}</h2>
-      </header>
-      <picture>
-        <img src={img} alt={nombre} className="ItemImg" />
-      </picture>
-      <section>
-        <p className="Info">Categoria: {category}</p>
-        <p className="Info">{description}</p>
-        <p className="Info">Precio: ${precio}</p>
-      </section>
-      <footer className="ItemFooter">
-        {isInCart(id) ? (
-          <NavLink to="/cart">Ir al carrito</NavLink>
-        ) : (
-          <Count onConfirm={handleAdd} stock={stock} />
-        )}
-      </footer>
-    </article>
+    <div className="ListGroup">
+      <article className="CardItem">
+        <header className="Header">
+          <h2 className="ItemHeader">{nombre}</h2>
+        </header>
+        <picture>
+          <img src={img} alt={nombre} className="ItemImg" />
+        </picture>
+        <section>
+          <p className="Info">Categoria: {category}</p>
+          <p className="Info">{description}</p>
+          <p className="Info">Precio: ${precio}</p>
+        </section>
+        <footer className="ItemFooter">
+          {isInCart(id) ? (
+            <NavLink to="/cart">Ir al carrito</NavLink>
+          ) : (
+            <Count onConfirm={handleAdd} stock={stock} />
+          )}
+        </footer>
+      </article>
+    </div>
   );
 };
 
