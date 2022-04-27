@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import { getProducts } from "../../Utils/getProducts";
-//import { getDocs, collection } from "firebase/firestore"
+//import { getProducts } from "../../Utils/getProducts";
+import { getDocs, collection, query, where } from "firebase/firestore";
 import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
-//import { firestoreDb } from "../../services/firebase/index"
+import { firestoreDb } from "../../services/firebase/index";
 
 const ItemListContainer = (props) => {
   const [products, setProducts] = useState([]);
@@ -11,20 +11,27 @@ const ItemListContainer = (props) => {
   const { categoryId } = useParams();
 
   useEffect(() => {
-     getProducts(categoryId)
+    /* getProducts(categoryId)
       .then((prods) => {
         setProducts(prods);
       })
       .catch((error) => {
         console.log(error);
-      }); 
-      /* getDocs(collection(firestoreDb, 'products')).then(res => {
-        console.log(res)
-        const products = res.docs.map((doc) =>{
-          return { id: doc.id, ...doc.data()}
-        })
-        setProducts(products)
-      }) */
+      }); */
+    const collectionRef = categoryId
+      ? query(
+          collection(firestoreDb, "products"),
+          where("category", "==", categoryId)
+        )
+      : collection(firestoreDb, "products");
+
+    getDocs(collectionRef).then((res) => {
+      console.log(res);
+      const products = res.docs.map((doc) => {
+        return { id: doc.id, ...doc.data() };
+      });
+      setProducts(products);
+    });
   }, [categoryId]);
 
   return (

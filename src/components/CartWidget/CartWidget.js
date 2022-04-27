@@ -9,17 +9,20 @@ const CartWidget = () => {
 
   const { cart } = useContext(CartContext);
 
-  if (cart.length === 0) {
-    return <div></div>;
-  } else {
-    return (
-      <Link to="/cart" className="CartWidget">
-        <button className="Button" variant="solid" size="md">
-          <BsCart2 className="btnCart" />
-          {getQuantity()}
-        </button>
-      </Link>
-    );
-  }
+  return (
+    <div>
+      {cart.length ? (
+        <Link to="/cart" className="CartWidget">
+          <button className="Button" variant="solid" size="md">
+            <BsCart2 className="btnCart" />
+            {getQuantity()}
+          </button>
+        </Link>
+      ) : (
+        <div></div>
+      )}
+    </div>
+  );
 };
+
 export default CartWidget;

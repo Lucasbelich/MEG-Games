@@ -18,7 +18,7 @@ export const getProductsById = (id) => {
       } else {
         reject("error");
       }
-    }, 2000);
+    }, 1000);
   });
 };
 

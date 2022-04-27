@@ -6,25 +6,28 @@ import { NavLink } from "react-router-dom";
 const Cart = () => {
   const { cart } = useContext(CartContext);
 
-  if (cart.length === 0) {
-    return (
-      <div>
-        <h1>No hay productos</h1>
-        <NavLink className={"buttonCount"} to="/">Volver al inicio</NavLink>
-      </div>
-    );
-  }
-
   return (
     <div>
-      <h1>Carrito</h1>
-      <div className="ListGroup">
-        {cart.map((prod) => (
-          <ItemCart key={prod.id} {...prod} />
-        ))}
-      </div>
+      {cart.length ? (
+        <div>
+          <h1>Carrito</h1>
+          <div className="ListGroup">
+            {cart.map((prod) => (
+              <ItemCart key={prod.id} {...prod} />
+            ))}
+          </div>
+        </div>
+      ) : (
+        <div>
+          <h1>No hay productos</h1>
+          <NavLink className={"buttonCount"} to="/">
+            Volver al inicio
+          </NavLink>
+        </div>
+      )}
     </div>
   );
+
 };
 
 export default Cart;
