@@ -6,6 +6,7 @@ Este proyecto fue construido para el curso React de CoderHouse.
 
  - Info General
  - Tecnologias
+ - Dependencias
  - Despliegue
  - Autor
  - Licencia
@@ -16,6 +17,11 @@ Este proyecto fue construido para el curso React de CoderHouse.
 - React
 - Firebase
 
+## Dependencias
+
+- React-router-dom
+- React-icons
+- Firebase
 
 ## Despliegue
 
@@ -24,10 +30,7 @@ y ejecutarlo localmente en su navegador
 Ya deberías tener instalado node.js y npm y luego usar:
 
 - cd .\meg-games\ 
-- npm install
-- npm install react-router-dom@6
-- npm install react-icons --save 
-- npm install firebase
+- npm i
 - npm run start
 
 
