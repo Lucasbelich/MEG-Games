@@ -41,3 +41,10 @@
     cursor: pointer;
     outline: inherit;
 }
+.footerCart{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    gap: 20px;
+}

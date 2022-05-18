@@ -14,11 +14,10 @@
   }
   
   .Option {
-    /* color: #8C30F5; */
+    
     text-decoration: none;
     border-radius: 25;
     margin: 0 50px;
-    /* TODO */
     width: auto;
     padding: 12px;
     font-size: 10px;
@@ -40,11 +39,10 @@
   }
 
   .ActiveOption {
-    /* color: #8C30F5; */
+    
     text-decoration: none;
     border-radius: 25;
     margin: 0 50px;
-    /* TODO */
     width: auto;
     padding: 12px;
     font-size: 10px;
@@ -64,11 +62,7 @@
     cursor: pointer;
     outline: inherit;
   }
-  
-  .NavLink {
-    color :rgb(255, 0, 0)
-  }
   .logo{
     color: #889fd3;
-    text-decoration: none
+    text-decoration: inherit; 
   }

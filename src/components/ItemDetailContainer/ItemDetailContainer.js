@@ -1,11 +1,9 @@
 import { useState, useEffect } from "react";
-//import { getProductsById } from "../../Utils/getProducts";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
-import "./ItemDetailContainer.css"
-import '../ItemList/ItemList.css'
-import { firestoreDb } from '../../services/firebase'
-import { getDoc, doc } from 'firebase/firestore'
+import "./ItemDetailContainer.css";
+import "../ItemList/ItemList.css";
+import { getProductsById } from "../../services/firebase/firestore";
 
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState();
@@ -14,7 +12,7 @@ const ItemDetailContainer = () => {
   const { productId } = useParams();
 
   useEffect(() => {
-    /* getProductsById(productId)
+    getProductsById(productId)
       .then((item) => {
         setProduct(item);
       })
@@ -23,26 +21,17 @@ const ItemDetailContainer = () => {
       })
       .finally(() => {
         setLoading(false);
-      }); */
-      getDoc(doc(firestoreDb, 'products', productId)).then(res => {
-        
-        const product = { id: res.id, ...res.data()}
-        setProduct(product)
-    })
-
-    return () => {
-      setProduct();
-    };
+      });
   }, [productId]);
 
   return (
     <div className="ItemDetailContainer">
       {loading ? (
-        <div class="spinner"></div>
+        <h1>El producto no existe</h1>
       ) : product ? (
         <ItemDetail className="ListGroup" {...product} />
       ) : (
-        <h1>El producto no existe</h1>
+        <div className="spinner"></div>
       )}
     </div>
   );

@@ -5,9 +5,8 @@ const ItemCart = ({ id, nombre, quantity, precio }) => {
   const { removeItem } = useContext(CartContext);
 
   return (
-    //<li key={prod.id}>{prod.nombre}  cantidad: {prod.quantity} precio uni: {prod.precio}  subtotal: {prod.quantity * prod.precio} <button onClick={() => removeItem(prod.id)}>X</button></li>
     <li className="CardItem Li">
-      <header >
+      <header>
         <h2 className="ItemHeader">{nombre}</h2>
       </header>
 

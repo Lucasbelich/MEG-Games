@@ -6,6 +6,7 @@ import NavBar from "./components/NavBar/NavBar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CartContextProvider } from "../src/Context/CartContext";
 import Cart from "./components/Cart/Cart";
+import Form from "./components/Form/Form";
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
               element={<ItemDetailContainer />}
             />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/form" element={<Form />} />
           </Routes>
         </BrowserRouter>
       </CartContextProvider>
