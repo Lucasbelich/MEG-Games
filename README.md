@@ -21,7 +21,6 @@ Este proyecto fue construido para el curso React de CoderHouse.
 
 - React-router-dom
 - React-icons
-- Firebase
 
 ## Despliegue
 
