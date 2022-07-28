@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/MEG-Games/static/css/main.b724f33a.css",
+    "main.js": "/MEG-Games/static/js/main.bc18c8c4.js",
+    "static/js/787.737b2835.chunk.js": "/MEG-Games/static/js/787.737b2835.chunk.js",
+    "index.html": "/MEG-Games/index.html",
+    "main.b724f33a.css.map": "/MEG-Games/static/css/main.b724f33a.css.map",
+    "main.bc18c8c4.js.map": "/MEG-Games/static/js/main.bc18c8c4.js.map",
+    "787.737b2835.chunk.js.map": "/MEG-Games/static/js/787.737b2835.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b724f33a.css",
+    "static/js/main.bc18c8c4.js"
+  ]
+}
