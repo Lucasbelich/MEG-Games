@@ -103,20 +103,20 @@ const Form = () => {
   if (loading) {
     return (
       <div>
-        <div className="spinner"></div>
-        <h1>Se esta generando su orden</h1>
+        <div className="spinner "></div>
+        <h1 className="text">Se esta generando su orden</h1>
       </div>
     );
   }
 
   if (orderId) {
     return (
-      <div className="py-5 text-center mt-5">
+      <div className="py-5 text-center mt-5 text">
         <h2 className="mt-5">¡Gracias por elegirnos!</h2>
-        <h4 className="my-5">La compra se ha realizado exitosamente.</h4>
+        <h5 className="my-5">La compra se ha realizado exitosamente.</h5>
         <strong>El ID de su compra es {orderId}</strong>
         <p className="danger">MEGGames</p>
-        <NavLink className="Button" to={"/"}>
+        <NavLink className="ButtonDetailForm" to={"/"}>
           <strong>Volver al inicio</strong>
         </NavLink>
       </div>
@@ -126,7 +126,7 @@ const Form = () => {
   return (
     <div>
       <div className="text-center py-5 mt-5">
-        <h4 className="mt-5">
+        <h4 className="mt-5 text">
           Completa el formulario con tus datos para confirmar la compra.
         </h4>
       </div>
@@ -163,7 +163,7 @@ const Form = () => {
           </form>
         </div>
         <button
-          className="Button"
+          className="ButtonDetail"
           type="submit"
           disabled={!inputName || !inputPhone || !inputEmail}
           onClick={createOrder}

@@ -42,7 +42,7 @@ const ItemDetail = ({
         </section>
         <footer className="ItemFooter">
           {isInCart(id) ? (
-            <NavLink to="/cart">Ir al carrito</NavLink>
+            <NavLink className="ButtonDetail" to="/cart">Ir al carrito</NavLink>
           ) : (
             <Count onConfirm={handleAdd} stock={stock} />
           )}

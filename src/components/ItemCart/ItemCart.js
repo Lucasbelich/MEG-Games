@@ -16,7 +16,7 @@ const ItemCart = ({ id, nombre, quantity, precio }) => {
         <p className="Info">Subtotal: ${precio * quantity}</p>
       </section>
       <footer className="ItemFooter">
-        <button className="Button" onClick={() => removeItem(id)}>
+        <button className="ButtonDetail" onClick={() => removeItem(id)}>
           X
         </button>
       </footer>

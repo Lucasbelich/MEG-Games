@@ -3,8 +3,8 @@
     padding: 30px;
     margin: 30px;
     font-size: 10px;
-    background-color: #e4ebf5;
-    border: 1px solid #e4ebf5;
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-primary);
     border-radius: 10px;
 }
 .Li{
@@ -21,21 +21,21 @@
 .ItemHeader {
     display: flex;
     justify-content: center;
-    color: #889fd3;
+    color: var(--color-white);
 }
 
 .Info {
     font-size: 12px;
     display: flex;
     justify-content: space-around;
-    color: #889fd3;
+    color: var(--color-white);
 }
 
 .ButtonDetail {
     width: auto;
     padding: 12px;
     font-size: 10px;
-    background: #d9e3f1;
+    background: var(--color-primary-variant);
     border-radius: 30px;
     flex: none;
     display: flex;
@@ -45,7 +45,7 @@
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    color: #889fd3;
+    color: var(--color-white);
     border: none;
     border-style: none;
     cursor: pointer;

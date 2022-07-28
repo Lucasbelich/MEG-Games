@@ -20,7 +20,7 @@ const NavBar = () => {
   return (
     <nav className="NavBar">
       <NavLink to="/">
-        <h3 className={"logo"}>MEGGames</h3>
+        <h3 className="logo">MEGGames</h3>
       </NavLink>
       <div className="Categories">
         {categories.map((cat) => (

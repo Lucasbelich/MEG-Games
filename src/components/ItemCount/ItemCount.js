@@ -22,12 +22,12 @@ const Count = ({ initial = 1, stock = 0, onConfirm }) => {
         <button onClick={decrement} className="buttonCount">
           -
         </button>
-        <p>{count}</p>
+        <p className="countText">{count}</p>
         <button onClick={increment} className="buttonCount">
           +
         </button>
       </div>
-      <button className="Button" onClick={() => onConfirm(count)}>
+      <button className="ButtonDetail" onClick={() => onConfirm(count)}>
         Agregar al carrito
       </button>
     </div>

@@ -25,7 +25,7 @@
     width: auto;
     padding: 12px;
     font-size: 10px;
-    background: #d9e3f1;
+    background: var(--color-bg);
     border-radius: 30px;
     flex: none;
     display: flex;
@@ -35,9 +35,30 @@
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    color: #889fd3;
+    color: var(--color-white);
     border: none;
     border-style: none;
+    cursor: pointer;
+    outline: inherit;
+}
+.Button:hover {
+    width: auto;
+    padding: 12px;
+    font-size: 10px;
+    background: var(--color-bg);
+    border-radius: 30px;
+    flex: none;
+    display: flex;
+    order: 1;
+    align-self: center;
+    flex-grow: 0;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: var(--color-white);
+    border: 1px;
+    border-style: solid;
+    border-color: var(--color-primary);
     cursor: pointer;
     outline: inherit;
 }

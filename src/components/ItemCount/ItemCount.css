@@ -6,25 +6,31 @@
 
 }
 .buttonCount {
-    color: #889fd3;
+    color: var(--color-white);
     padding: 0.5em 1em;
     font-size: 10px;
     border-radius: 5em;
     text-decoration: none;
-    background: #d9e3f1;
+    background: var(--color-bg);
 
-    border: 1px solid #d9e3f1;
+    border: 1px solid var(--color-primary);
     transition: all .3s;
-    box-shadow: 6px 6px 12px #c5c5c5,
-                -6px -6px 12px #eff6ff;
-    margin: 0px 5px 0px 5px
+    box-shadow: 4px 4px 12px var(--color-primary),
+                -4px -4px 12px var(--color-primary);
+    margin: 0px 10px 0px 10px
    }
    
    .buttonCount:hover {
-    border: 1px solid white;
+    border: 1px solid var(--color-primary);
+    cursor: pointer;
    }
    
    .buttonCount:active {
-    box-shadow: 4px 4px 12px #c5c5c5,
-                -4px -4px 12px #ffffff;
+    box-shadow: 4px 4px 12px var(--color-primary),
+                -4px -4px 12px var(--color-primary);
+   }
+
+   .countText {
+    color: var(--color-white);
+    font-size: 1rem;
    }
