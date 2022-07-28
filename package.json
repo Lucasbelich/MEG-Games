@@ -1,10 +1,12 @@
 {
-  "name": "meg-games",  
+  "name": "meg-games",
   "version": "0.1.0",
+  "homepage": "https://lucasbelich.github.io/MEG-Games",
   "private": true,
   "dependencies": {
     "cra-template": "1.1.3",
     "firebase": "^9.6.11",
+    "gh-pages": "^4.0.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-icons": "^4.3.1",

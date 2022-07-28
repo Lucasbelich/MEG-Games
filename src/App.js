@@ -12,7 +12,7 @@ const App = () => {
   return (
     <div className="App">
       <CartContextProvider>
-        <BrowserRouter>
+        <BrowserRouter basename="MEG-Games/">
           <NavBar />
           <Routes>
             <Route path="*" element={<h1>NOT FOUND 404</h1>} />
